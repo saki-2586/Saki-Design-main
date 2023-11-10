@@ -1,0 +1,556 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+html::after,
+html::before,
+body::after,
+body::before {
+  position: fixed;
+  content: "";
+  z-index: 90;
+  display: block;
+  background-color: #C8E8FA;
+}
+html::before {
+  width: calc(100% - 130px);
+  height: 10px;
+  top: 0;
+  right: 0;
+}
+html::after {
+  width: 10px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+}
+body::before {
+  width: calc(100% - 130px);
+  height: 10px;
+  bottom: 0;
+  right: 0;
+}
+body::after {
+  width: 10px;
+  height: 100vh;
+  top: 0;
+  left: 130px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+.container {
+  margin-left: 130px;
+  height: 100vh;
+  display: flex;
+}
+.site-title {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.sec-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 30px;
+  margin-left: 20px;
+  z-index: 60;
+  margin: 0 0 0 0;
+}
+
+/* ヘッダー */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 130px;
+  padding: 40px 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+#header a {
+  font-size: 25px;
+  font-weight: bold;
+}
+.hamburger {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  left: 48px;
+  transition: 0.5s;
+}
+.hamburger span {
+  width: 33px;
+  height: 5px;
+  background-color: #C8E8FA;
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+}
+.hamburger span:nth-child(1) {
+  top: 4px;
+}
+.hamburger span:nth-child(2) {
+  top: 16px;
+}
+.hamburger span:nth-child(3) {
+  top: 28px;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+#navi {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -120%;
+  width: calc(100% - 130px);
+  height: 100vh;
+  color: #fff;
+  background-color: #C8E8FA;
+  transition: all 0.6s;
+  z-index: 90;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-menu {
+  margin-top: 50px;
+}
+.nav-menu li {
+  margin-bottom: 25px;
+}
+.nav-menu li a {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+/* メニューが開いたとき */
+#navi.active {
+  right: 0;
+}
+
+
+/* メインビジュアル */
+#mainvisual {
+  background-color: #C8E8FA;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+}
+.text {
+  position: absolute;
+  z-index: 30;
+  top: 26vh;
+  left: 13%;
+  color: #e9f4fa;
+  -webkit-text-stroke: 1px #000;
+  /* text-stroke: 1px #000; */
+  font-style: italic;
+  font-size: 60px;
+}
+.image {
+  position: absolute;
+  z-index: 20;
+  width: 54%;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+.image li {
+  opacity: 0;
+  animation: fade 15s infinite;
+  position: absolute;
+}
+.image li:nth-child(1) {
+  animation-delay: 0s;
+}
+.image li:nth-child(2) {
+  animation-delay: 5s;
+}
+.image li:nth-child(3) {
+  animation-delay: 10s;
+}
+.image li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0px 0px 20px 20px #fff;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.subtitle {
+  font-size: 40px;
+  font-style: italic;
+  margin-left: 70px;
+}
+.image img {
+  height: 96vh;
+  object-fit: cover;
+}
+
+/* About */
+#about {
+  width: 100%;
+  height: 100vh;
+  background-color: #FFF5FF;
+  padding: 0;
+}
+.about-image {
+  width: 50%;
+}
+.about-wrapper {
+  display: flex;
+}
+.about-image img {
+  width: 80%;
+  height: 68vh;
+  margin-left: 45px;
+}
+.about-info {
+  background-color: #fff;
+  width: 50%;
+  margin: 45px 45px 45px 0;
+  padding: 50px 0;
+}
+.name {
+  text-align: center;
+  margin: 20px 0;
+}
+.about-info p {
+  padding: 20px;
+}
+
+/* Skills */
+#skills {
+  width: 100%;
+  background-color: #F0F8FF;
+  padding: 0;
+}
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+#skills ul li {
+  width: 32%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#skills ul li img {
+  width: 30%;
+  margin-top: 10px;
+}
+.language {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+#skills .info {
+  padding: 0 20px;
+  text-align: left;
+}
+#skills ul li:nth-child(5) {
+  padding-top: 27px;
+}
+
+/* Service */
+#service {
+  background-color: #fff;
+  padding: 0;
+}
+#service .list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#service .list li {
+  width: 23%;
+  border-radius: 50%;
+  background-color: #FAE1E2;
+  text-align: center;
+  margin: 30px 40px 40px 40px;
+  position: relative;
+  overflow: hidden;
+}
+#service .list li p {
+  padding: calc(50% - 11px) 0;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0;
+}
+#service .list li::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #BE7D91;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  opacity: 0.3;
+  transition: 0.5s;
+}
+#service .list li:hover::before {
+  left: 0;
+}
+.service-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+/*========= particle js を描画するエリア設定 ===============*/
+
+html,body{
+  height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+
+#particles-js{ 
+  position:absolute;/*描画固定*/
+  width: calc(100% - 150px);
+  /* min-height: 800px; */
+  z-index: 0;
+  min-height: 900px;
+  background-color: #fff;
+}
+
+/* Contact */
+#contact {
+  background-color: #F0F8FF;
+  padding: 0;
+  z-index: 60;
+  position: relative;
+  height: 100vh;
+}
+.contact-wrapper {
+  padding: 0 65px 0 65px;
+}
+#contact p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#contact dt {
+  margin-bottom: 5px; 
+  font-weight: bold;
+}
+#contact dd {
+  margin-bottom: 10px;
+}
+#contact dd input, 
+#contact dd textarea {
+  border: solid 1px #C8E8FA;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 4px;
+}
+#contact dd input {
+  padding: 4px 2px;
+}
+#contact dd textarea {
+  height: 80px;
+}
+#contact .button {
+  text-align: center;
+  margin-top: 30px;
+}
+#contact .button input {
+  width: 200px;
+  background-color: #A3ADB5;
+  color: #fff;
+  padding: 15px 0;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+#contact .button input:hover {
+  opacity: 0.7;
+}
+
+/* footer */
+#footer {
+  background-color: #F0F8FF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.copyright {
+  margin-top: -30px;
+  font-size: 13px;
+  z-index: 62;
+}
+
+/* sp */
+@media screen and (max-width:960px) {
+  /* フレーム */
+  html::before {
+    top: 70px;
+    width: 100%;
+  }
+  body::before {
+    width: 100%;
+  }
+  body::after {
+    left: 0;
+  }
+  .container {
+    margin-left: 0;
+  }
+  .sec-title {
+    padding: 20px;
+  }
+  .site-title {
+    transform: translate(-18vw, 2.8vw);
+  }
+  
+  
+  /* header */
+  #header {
+    width: 100%;
+    height: 70px;
+    padding: 0;
+    
+  }
+  #header a {
+    font-size: 28px;
+  }
+  .site-title {
+    writing-mode: horizontal-tb;
+  }
+  .hamburger {
+    top: 10px;
+    right: 15px;
+    left: auto;
+  }
+
+  /* メインビジュアル */
+  #mainvisual {
+    background-color: #fff;
+  }
+  .text {
+    z-index: 20;
+    left: 13px;
+    top: 40vh;
+  }
+  .image {
+    width: 100%;
+    z-index: 15;
+    right: 0;
+  }
+  .title {
+    font-size: 58px;
+    margin-bottom: 15px;
+  }
+  .subtitle {
+    font-size: 23px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .image img {
+    height: 100vh;
+  }
+
+  /* about */
+  #about {
+    height: auto;
+  }
+  .about-wrapper {
+    flex-direction: column;
+  }
+  .about-image {
+    width: 100%;
+    text-align: center;
+  }
+  .about-image img {
+    height: auto;
+    margin: 0 auto;
+    width: 86%;
+  }
+  .about-info {
+    width: 86%;
+    margin: 20px auto;
+    padding: 30px 0;
+  }
+
+  /* Skills */
+  #skills ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #skills ul li {
+    width: auto;
+  }
+
+  /* Service */
+  #service .list li {
+    margin: 10px;
+    width: 42%;
+  }
+  #service .list {
+    justify-content: space-around;
+  }
+  #service ul li:nth-child(5),
+  #service ul li:nth-child(6) {
+    margin-bottom: 30px;
+  }
+
+  /* contact */
+  #contact {
+    height: calc(100vh - 70px);
+  }
+  .contact-wrapper {
+    width: 86%;
+    margin: auto;
+    padding: 0;
+  }
+  #contact dd {
+    margin-bottom: 15px;
+  }
+  #contact p {
+    margin-bottom: 40px;
+  }
+  
+}
