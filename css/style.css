@@ -50,7 +50,6 @@ li {
 .container {
   margin-left: 130px;
   height: 100vh;
-  display: flex;
 }
 .site-title {
   -ms-writing-mode: tb-rl;
