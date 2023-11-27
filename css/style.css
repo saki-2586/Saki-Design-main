@@ -349,7 +349,7 @@ html,body{
 #particles-js{ 
   position:absolute;/*描画固定*/
   width: calc(100% - 150px);
-  /* min-height: 800px; */
+  height: 800px;
   z-index: 0;
   min-height: 900px;
   background-color: #fff;
@@ -464,6 +464,9 @@ html,body{
     right: 15px;
     left: auto;
   }
+  #navi {
+    width: 100%;
+  }
 
   /* メインビジュアル */
   #mainvisual {
@@ -534,6 +537,9 @@ html,body{
   #service ul li:nth-child(5),
   #service ul li:nth-child(6) {
     margin-bottom: 30px;
+  }
+  #particles-js {
+    width: 100%;
   }
 
   /* contact */
